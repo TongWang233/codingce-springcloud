@@ -16,6 +16,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableEurekaClient //开启Eureka 在服务启动后, 自动注册到Eureka中
 @EnableDiscoveryClient  //服务发现
 @EnableSwagger2
+//http://localhost:8002/swagger-ui.html
 public class DeptProvider8002 {
     public static void main(String[] args) {
         SpringApplication.run(DeptProvider8002.class, args);

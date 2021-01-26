@@ -12,13 +12,18 @@ mybatis:
 # spring配置
 spring:
   application:
-    name: springcloud-provider-dept # 3 个服务名称一致
+    name: microservicecloud-dept
   datasource:
-    type: com.alibaba.druid.pool.DruidDataSource # 数据源 德鲁伊
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://cdb-q9atzwrq.bj.tencentcdb.com:10167/db01?useSSL=true
+    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
+    url: jdbc:mysql://localhost:3306/clouddb01              # 数据库名称
     username: root
-    password: mxz123456
+    password: root
+    dbcp2:
+      min-idle: 5                                           # 数据库连接池的最小维持连接数
+      initial-size: 5                                       # 初始化连接数
+      max-total: 5                                          # 最大连接数
+      max-wait-millis: 200
 
 # EURAKE 配置 服务注册到哪里
 eureka:

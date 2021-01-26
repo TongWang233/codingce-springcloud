@@ -7,7 +7,7 @@
     <insert id="addDept" parameterType="Dept">
         insert into dept(dname, db_source) values (#{dname}, DATABASE())
     </insert>
-    
+
     <select id="queryById" parameterType="Long" resultType="Dept">
         select * from dept where deptno = #{deptno}
     </select>
