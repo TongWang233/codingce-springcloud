@@ -11,6 +11,11 @@
     <description>也是用来做客户端的</description>
     <artifactId>springcloud-cusumer-dept-feign</artifactId>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+    </properties>
     <dependencies>
         <!--feign-->
         <dependency>

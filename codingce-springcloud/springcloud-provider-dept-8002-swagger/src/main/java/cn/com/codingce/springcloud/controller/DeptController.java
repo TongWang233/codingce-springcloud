@@ -3,6 +3,10 @@ package cn.com.codingce.springcloud.controller;
 import cn.com.codingce.springcloud.pojo.Dept;
 import cn.com.codingce.springcloud.service.DeptClientService;
 import cn.com.codingce.springcloud.service.DeptService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,6 +42,9 @@ public class DeptController {
         return deptService.queryById(id);
     }
 
+    @ApiOperation(value="获取部门详细信息", notes="根据url的id来指定更新对象，并根据传过来的user信息来更新部门详细信息")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "id", value = "部门Id", required = true, dataType = "Integer")    })
     @GetMapping("/dept/list")
     public List<Dept> queryAll() {
         return deptService.queryAll();

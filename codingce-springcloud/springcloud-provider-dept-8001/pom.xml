@@ -11,6 +11,11 @@
 
     <artifactId>springcloud-provider-dept</artifactId>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+    </properties>
     <dependencies>
         <!--actuator完善监控信息-->
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator -->
@@ -48,9 +53,11 @@
             <artifactId>junit</artifactId>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.44</version>
         </dependency>
 
         <dependency>

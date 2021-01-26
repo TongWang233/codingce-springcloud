@@ -24,6 +24,7 @@ public class DeptProvider_Hystrix_8001 {
         SpringApplication.run(DeptProvider_Hystrix_8001.class, args);
     }
     // 增加一个Servlet
+    //http://localhost:8001/actuator/hystrix.stream
     @Bean
     public ServletRegistrationBean hystrixMetricsStreamServlet() {
         ServletRegistrationBean registrationBean = new ServletRegistrationBean(new HystrixMetricsStreamServlet());

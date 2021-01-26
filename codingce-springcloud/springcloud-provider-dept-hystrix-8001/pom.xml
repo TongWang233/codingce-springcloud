@@ -16,7 +16,11 @@
         服务降级： 客户端~ 从整体网站请求负载考虑~ 当某个服务熔断或者关闭后 ， 服务将不再调用
         此时在客户但我们可以准备 一个FallbackFactory, 返回一个默认的值(缺省值), 整体的服务水平下降了~ , 好歹能够使用
     -->
-
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+    </properties>
     <dependencies>
         <!--actuator完善监控信息-->
         <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-actuator -->
@@ -55,6 +59,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.44</version>
         </dependency>
 
         <dependency>
