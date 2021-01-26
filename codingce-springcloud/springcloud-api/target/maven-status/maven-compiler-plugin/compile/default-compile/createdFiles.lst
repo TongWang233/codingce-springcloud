@@ -1,0 +1,4 @@
+cn\com\codingce\springcloud\pojo\Dept.class
+cn\com\codingce\springcloud\service\DeptClientServiceFallbackFactory.class
+cn\com\codingce\springcloud\service\DeptClientService.class
+cn\com\codingce\springcloud\service\DeptClientServiceFallbackFactory$1.class
