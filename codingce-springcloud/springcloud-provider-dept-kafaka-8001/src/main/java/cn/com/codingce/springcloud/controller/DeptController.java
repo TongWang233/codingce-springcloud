@@ -2,10 +2,10 @@ package cn.com.codingce.springcloud.controller;
 
 import cn.com.codingce.springcloud.pojo.Dept;
 import cn.com.codingce.springcloud.service.DeptService;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -13,33 +13,38 @@ import java.util.List;
 
 /**
  * @author xzMa
- *
+ * <p>
  * 提供RestFul服务
  */
 @RestController
 public class DeptController {
 
+    @Resource
+    private DeptService deptService;
+
     //获取一些配置的信息
     @Resource
     private DiscoveryClient client;
 
-    @Resource
-    private DeptService deptService;
+    @Autowired
+    private KafkaTemplate<String,Object> kafkaTemplate;
 
 
-    @GetMapping("/dept/get/{id}" )
-    @HystrixCommand(fallbackMethod = "hystrixGet")
-    public Dept queryBuId(@PathVariable("id") Long id) {
-        Dept dept = deptService.queryById(id);
-        if(dept == null) {
-            throw new RuntimeException("id=>" + id + ", 不存在该用户, 或者信息无法找到~");
-        }
-        return dept;
+
+    @GetMapping("/message/send")
+    public boolean send(@RequestParam String message){
+        kafkaTemplate.send("test1",message);
+        return true;
     }
 
     @PostMapping("/dept/add")
     public boolean addDept(Dept dept) {
         return deptService.addDept(dept);
+    }
+
+    @GetMapping("/dept/get/{id}")
+    public Dept queryBuId(@PathVariable("id") Long id) {
+        return deptService.queryById(id);
     }
 
     @GetMapping("/dept/list")
@@ -63,17 +68,6 @@ public class DeptController {
         }
 
         return this.client;
-    }
-
-    /**
-     * 备选方法
-     * @param id
-     * @return
-     * 注意该方法上面没有访问地址
-     */
-    public Dept hystrixGet(@PathVariable("id") Long id) {
-        Dept dept = new Dept(id, "id=>" + id + ", 不存在该用户, 或者信息无法找到~", "no datebase");
-        return dept;
     }
 
 }

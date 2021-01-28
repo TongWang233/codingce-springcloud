@@ -17,8 +17,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableDiscoveryClient  //服务发现
 @EnableSwagger2
 //http://localhost:8002/swagger-ui.html
-public class DeptProvider8002 {
+public class DeptProviderSwagger8002 {
     public static void main(String[] args) {
-        SpringApplication.run(DeptProvider8002.class, args);
+        SpringApplication.run(DeptProviderSwagger8002.class, args);
     }
 }

@@ -1,4 +1,4 @@
-# �?发步�?  导入配置, 编写依赖
+# 开发步骤  导入配置, 编写依赖
 server:
   port: 3344
 
@@ -10,7 +10,7 @@ spring:
     config:
       server:
         git:
-          uri: https://gitee.com/codingce/springcloud-config.git  # 是https�?, 不是git
+          uri: https://gitee.com/codingce/springcloud-config.git  # 是https的, 不是git
 
-# 通过config-server 可以连接到git 访问其中的资源以及配�?  http://localhost:3344/application-dev.yml   http://localhost:3344/application/dev/master
-# config-server服务�?        gitee地址：https://gitee.com/codingce/springcloud-config.git
+# 通过config-server 可以连接到git 访问其中的资源以及配置  http://localhost:3344/application-dev.yml   http://localhost:3344/application/dev/master
+# config-server服务端        gitee地址：https://gitee.com/codingce/springcloud-config.git

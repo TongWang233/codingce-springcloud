@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: cn.com.codingce.MyTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.147 s <<< FAILURE! - in cn.com.codingce.MyTest
+mytest(cn.com.codingce.MyTest)  Time elapsed: 0.016 s  <<< ERROR!
+java.lang.NullPointerException
+	at cn.com.codingce.MyTest.mytest(MyTest.java:17)
+

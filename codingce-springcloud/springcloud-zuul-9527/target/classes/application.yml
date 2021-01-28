@@ -19,11 +19,11 @@ info:
   cpmany.name: i.codingce.com.cn
   author: xzMhehe
 
-# 路由网关配置  我们�?要设置原路径不能访问, 仅可使用Zuul路由网关配置�?  路径    (已在 win10 hosts  里面配置 127.0.0.1	www.codingce.com)
+# 路由网关配置  我们需要设置原路径不能访问, 仅可使用Zuul路由网关配置的  路径    (已在 win10 hosts  里面配置 127.0.0.1	www.codingce.com)
 zuul:
   routes:
     mydept.serviceId: springcloud-provider-dept
     mydept.path: /mydept/**
   ignored-services: springcloud-provider-dept # 不能在使用这个路径访问了  ignored-services: "*" 隐藏全部的真实的项目
-  prefix: /mxz  # 设置公共的前�?       可有可无  �? http://www.codingce.com:9527/mydept/dept/list    加了之后 http://www.codingce.com:9527/mxz/mydept/dept/list
+  prefix: /mxz  # 设置公共的前缀       可有可无  原 http://www.codingce.com:9527/mydept/dept/list    加了之后 http://www.codingce.com:9527/mxz/mydept/dept/list
 
