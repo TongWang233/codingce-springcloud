@@ -16,7 +16,7 @@ import java.util.List;
  *
  *
  * 调用微服务两种方式 1 微服务名字 ribbon   2 接口和注解 feign
- *
+ *  *
  *
  * 只需要 接口和注解
  *
@@ -33,19 +33,19 @@ public interface DeptClientService {
      * @return
      */
     @GetMapping("/dept/get/{id}")
-    public Dept queryById(@PathVariable("id") Long id);
+     Dept queryById(@PathVariable("id") Long id);
 
     /**
      * @return List<Dept>
      */
     @GetMapping("/dept/list")
-    public List<Dept> queryAll();
+     List<Dept> queryAll();
 
     /**
      * @param dept
      * @return boolean
      */
     @PostMapping("/dept/add")
-    public boolean addDept(Dept dept);
+     boolean addDept(Dept dept);
 
 }

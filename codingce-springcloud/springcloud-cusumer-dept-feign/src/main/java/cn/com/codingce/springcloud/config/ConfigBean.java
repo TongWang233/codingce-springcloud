@@ -2,6 +2,7 @@ package cn.com.codingce.springcloud.config;
 
 import com.netflix.loadbalancer.IRule;
 import com.netflix.loadbalancer.RandomRule;
+import com.netflix.loadbalancer.RoundRobinRule;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,7 +26,7 @@ public class ConfigBean {   //configuration -- spring applicationContext.xml
 
     @Bean
     public IRule myRule() {
-        return new RandomRule();
+        return new RoundRobinRule();
     }
 
 }
